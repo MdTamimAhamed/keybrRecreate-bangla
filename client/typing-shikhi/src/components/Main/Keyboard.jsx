@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import KeyboardNumericalBtn from '../Reuseable/KeyboardNumericalBtn'
 import KeyboardAlphaBtn from '../Reuseable/KeyboardAlphaBtn';
+import KeyboardContext from '../../context/KeyboardContext';
 
 function Keyboard() {
 
     const[key, setKey] = useState(null);
-    const[toggleKeyboard, setToggleKeyboard] = useState(null)  
+    const {keyboardVisibility} = useContext(KeyboardContext); 
 
     const shiftKeys = ['`','!','@','#','$','%','^','&','*','(',')','_','+']
     const directKeys =['~','1','2','3','4','5','6','7','8','9','0','-','=','Backspace']
@@ -30,16 +31,8 @@ function Keyboard() {
     }, []); 
 
 
-    useEffect(() => {
-      const storedValue= localStorage.getItem("toggleKeyboard");
-      if(storedValue !== null)
-        setToggleKeyboard(JSON.stringify(storedValue))
-
-    }, [toggleKeyboard])
-    
-
   return (
-    <div className={`w-[65%] h-62 mx-auto bg-gray-800 ${toggleKeyboard? 'flex':'hidden'} flex-col gap-y-2 rounded-md font-shiliguri p-2 font-medium text-light-text`}>
+    <div className={`w-[65%] h-62 mx-auto bg-gray-800 ${!keyboardVisibility? 'flex':'hidden'} flex-col gap-y-2 rounded-md font-shiliguri p-2 font-medium text-light-text`}>
         <div className='flex justify-between items-center'>
           {directKeys.map((item,index) => (
             <KeyboardNumericalBtn

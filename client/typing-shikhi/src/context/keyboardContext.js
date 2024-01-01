@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { createContext } from 'react'
 
-function keyboardContext() {
-  return (
-    <div>keyboardContext</div>
-  )
-}
+const KeyboardContext = createContext(); //context created
 
-export default keyboardContext
+export default KeyboardContext;
+
+

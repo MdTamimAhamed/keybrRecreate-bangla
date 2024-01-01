@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import {LuSettings2} from 'react-icons/lu'
+import KeyboardContext from '../../context/KeyboardContext';
 
 function ScoreSection() {
 
     const[toggleKeyboard, setToggleKeyboard] = useState(true)
+    const {setKeyboardVisibility} = useContext(KeyboardContext);
 
-    function handleKeyboard(){
-        const toggle = !toggleKeyboard;
-        localStorage.setItem("toggleKeyboard", JSON.stringify(toggle));
-        setToggleKeyboard(toggle);
+    const handleKeyboard = ()=>{
+        setToggleKeyboard(!toggleKeyboard);
+        setKeyboardVisibility(toggleKeyboard);
     }
 
   return (
