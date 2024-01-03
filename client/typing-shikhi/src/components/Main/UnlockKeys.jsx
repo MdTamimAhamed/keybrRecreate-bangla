@@ -23,7 +23,7 @@ function UnlockKeys() {
                 {
                     keyList.map((item, index)=>(
                         <li key={index}
-                            className={`${(index <= incr_index)? 'bg-light-green text-black':'text-text-clr'} w-8 h-7 bg-light-bg 
+                            className={`${(index <= incr_index)? 'bg-light-green text-text-clr':'text-light-text'} w-8 h-7 bg-background 
                                         flex justify-center items-center rounded-sm mx-1`}>
                             {item}
                         </li>

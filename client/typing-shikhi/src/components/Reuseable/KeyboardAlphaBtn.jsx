@@ -1,6 +1,6 @@
 import React from 'react'
 
-function KeyboardAlphaBtn({rawName, tabRow, caplocksRow, shiftRow, spaceRow}) {
+function KeyboardAlphaBtn({rawName, tabRow, caplocksRow, shiftRow, spaceRow, isPressed}) {
   let tabRowComponent = null
   let caplocksRowComponent = null
   let shiftRowComponent = null
@@ -11,6 +11,7 @@ function KeyboardAlphaBtn({rawName, tabRow, caplocksRow, shiftRow, spaceRow}) {
       <div
         className={`
         ${(spaceRow === "Space") && 'w-[480px]'}
+        ${isPressed? 'bg-light-text text-white':''}
          bg-forground h-10 w-12 rounded leading-3 flex justify-center items-center`}>
           <p>{spaceRow}</p>
         </div>
@@ -22,6 +23,7 @@ function KeyboardAlphaBtn({rawName, tabRow, caplocksRow, shiftRow, spaceRow}) {
       <div
         className={`
         ${(shiftRow === "Shift") && 'w-32'}
+        ${isPressed? 'bg-light-text text-white':''}
          bg-forground h-10 w-12 rounded leading-3 flex justify-center items-center`}>
           <p>{shiftRow}</p>
         </div>
@@ -32,7 +34,8 @@ function KeyboardAlphaBtn({rawName, tabRow, caplocksRow, shiftRow, spaceRow}) {
     caplocksRowComponent = (
       <div
         className={`
-        ${(caplocksRow === "CapLocks" || caplocksRow === "Enter") && 'w-24'}
+        ${(caplocksRow === "CapsLock" || caplocksRow === "Enter") && 'w-24'}
+        ${isPressed? 'bg-light-text text-white':''}
          bg-forground h-10 w-12 rounded leading-3  flex justify-center items-center`}>
           <p>{caplocksRow}</p>
         </div>
@@ -44,6 +47,7 @@ function KeyboardAlphaBtn({rawName, tabRow, caplocksRow, shiftRow, spaceRow}) {
       <div
         className={`
         ${(tabRow === "Tab" || tabRow === "\\|") && 'w-20'}
+        ${isPressed? 'bg-light-text text-white':''}
         bg-forground h-10 w-12 rounded leading-3 flex justify-center items-center`}>
           <p>{tabRow}</p>
         </div>

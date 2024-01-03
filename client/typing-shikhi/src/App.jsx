@@ -20,7 +20,7 @@ function App() {
       <KeyboardContextProvider>
         <Layout>
           <Routes>
-            <Route path='/practice' element={<Practice/>}/>
+            <Route path='/' element={<Practice/>}/>
             <Route path='/profile' element={<Profile/>}/>
             <Route path='/leaderboard' element={<Leaderboard/>}/>
             <Route path='/stats' element={<Stats/>}/>

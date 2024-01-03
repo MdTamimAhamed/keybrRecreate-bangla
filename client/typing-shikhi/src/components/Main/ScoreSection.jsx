@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import {LuSettings2} from 'react-icons/lu'
-import KeyboardContext from '../../context/KeyboardContext';
+import KeyboardContext from '../../context/keyboardContext';
 
 function ScoreSection() {
 

@@ -18,7 +18,7 @@ function Navbar() {
 
 
     const navElements = [
-        {id:1, icon:<FaRegKeyboard/>, name:"টাইপিং প্র্যাক্টিস", path:"/practice"},
+        {id:1, icon:<FaRegKeyboard/>, name:"টাইপিং প্র্যাক্টিস", path:"/"},
         {id:2, icon:<AiOutlineUser/>,  name:"প্রোফাইল", path:"/profile"},
         {id:3, icon:<MdOutlineLeaderboard/>, name:"লিডারবোর্ড", path:"/leaderboard"},
         {id:4, icon:<TfiStatsUp/>, name:"স্ট্যাটস", path:"/stats"},
@@ -35,8 +35,7 @@ function Navbar() {
             <ul className='flex items-center mx-5 py-2 flex-wrap'>
                 {navElements.map((item, index)=>(
                     <Link key={item.id} to={item.path} onClick={()=>btnActive(index)}>
-                        <li className={`${activeBtn === index? 'bg-gray-800' : ''} 
-                                        px-6 py-2 flex items-center text-text-clr cursor-pointer hover:text-orange-500 rounded-lg
+                        <li className={`px-6 py-2 flex items-center text-text-clr cursor-pointer hover:text-orange-500 rounded-lg
                                         tansition-all ease duration-100`} >
                                             
                             <span className='text-orange-500 text-md'>{item.icon}</span>

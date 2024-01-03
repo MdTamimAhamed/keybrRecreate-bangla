@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import KeyboardContext from './KeyboardContext'
+import KeyboardContext from './keyboardContext';
 
 const KeyboardContextProvider = ({children}) =>{
 
